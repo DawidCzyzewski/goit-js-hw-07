@@ -38,15 +38,14 @@ const modal = (event) => {
     );
     instance.show();
 
-    // if (instance.visable) {
-    document.addEventListener("keydown", (event) => {
-      if (event.code === "Escape") {
-        //   if (event.key === "Escape") {
-        instance.close();
-        console.log("ESCAPED");
-      }
-    });
-    // }
+    if (instance.visible) {
+      gallery.addEventListener("keydown", (event) => {
+        if (event.code === "Escape") {
+          console.log("Image was closed");
+          instance.close();
+        }
+      });
+    }
   }
 };
 
